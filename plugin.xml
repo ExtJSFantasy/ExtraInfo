@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	id:插件的标识，发布的id
+	name:插件的名称
+	decription:描述信息
+	js-module:对应的javascript文件，src属性指向www/ExtraInfo.js
+	platform:支持的平台，这里只写了android
+ -->
+<plugin id="com.middol.extrainfo" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android" version="0.0.1">
+	<name>ExtraInfo</name>
+	<description>Description</description>
+	<js-module name="ExtraInfo" src="www/ExtraInfo.js">
+		<clobbers target="cordova.plugins.ExtraInfo"/>
+	</js-module>
+	<platform name="android">
+		<!-- 这里是插件的配置信息，最后会添加到 res/xml/config.xml文件中，并且将src/android/ExtraInfo.java复制到android的package包中。-->
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="ExtraInfo">
+				<param name="android-package" value="com.middol.extrainfo"/>
+			</feature>
+		</config-file>
+		<source-file src="src/android/ExtraInfo.java" target-dir="src/com/middol/extrainfo"/>
+	</platform>
+</plugin>
