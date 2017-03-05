@@ -1,4 +1,22 @@
-﻿public class ExtraInfo extends CordovaPlugin{
+﻿
+package  ExtraInfo;
+
+
+
+import  org.apache.cordova.api.CallbackContext;
+
+
+
+import  org.apache.cordova.api.CordovaPlugin;
+
+import  org.apache.cordova.api.PluginResult;
+
+import  org.json.JSONArray;
+
+import  org.json.JSONException;
+
+import  org.json.JSONObject;
+public class ExtraInfo extends CordovaPlugin{
 	/**
 	 * [execute 继承CordovaPlugin类，重写execute方法]
 	 * @param  action          [判断javascript中调用的方法，成功调用callbackContext.success(message),失败调用callbackContext.error(message) ]
